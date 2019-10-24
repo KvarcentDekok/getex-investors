@@ -11,33 +11,41 @@
 </head>
 <body>
 <header>
-    <nav>
-        <div class="container">
-            <a href="index.html">
+    <nav class="navbar">
+        <div class="container flex-row">
+            <a href="index.html" class="logo">
                 <img src="img/logo.svg" alt="GetEx" width="116" height="50">
                 <span class="visually-hidden">GetEx</span>
             </a>
 
-            <button type="button"><span class="visually-hidden">Развернуть/свернуть</span></button>
+            <button type="button" class="toggler">
+                <svg width="40" height="40">
+                    <line x1="5" y1="11.7" x2="35" y2="11.7" stroke="#ffffff" stroke-width="3.3" />
+                    <line x1="5" y1="20" x2="35" y2="20" stroke="#ffffff" stroke-width="3.3" />
+                    <line x1="5" y1="28.3" x2="35" y2="28.3" stroke="#ffffff" stroke-width="3.3" />
+                </svg>
 
-            <ul>
-                <li>
-                    <a href="#">О нас</a>
+                <span class="visually-hidden">Развернуть/свернуть</span>
+            </button>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
                 </li>
-                <li>
-                    <a href="#">Модель</a>
+                <li class="nav-item">
+                    <a class="nav-link"  href="#">Модель</a>
                 </li>
-                <li>
-                    <a href="#">Калькулятор</a>
+                <li class="nav-item">
+                    <a class="nav-link"  href="#">Калькулятор</a>
                 </li>
-                <li>
-                    <a href="#">Партнеры</a>
+                <li class="nav-item">
+                    <a class="nav-link"  href="#">Партнеры</a>
                 </li>
-                <li>
-                    <a href="#">Сотрудничать</a>
+                <li class="nav-item">
+                    <a class="nav-link"  href="#">Сотрудничать</a>
                 </li>
-                <li>
-                    <a href="#">Связаться</a>
+                <li class="nav-item">
+                    <a class="nav-link"  href="#">Связаться</a>
                 </li>
             </ul>
         </div>
@@ -46,17 +54,29 @@
 
 <main>
     <h1 class="visually-hidden">GetEx для инвесторов</h1>
-    <section>
-        <video width="100%" height="auto" preload="auto" autoplay="autoplay"
-               loop="loop" poster="img/bg-video.jpg">
+    <div class="first-screen">
+        <div class="bg-video">
+            <video width="100%" height="auto" preload="auto" autoplay="autoplay" muted
+                   loop poster="img/bg-video.jpg" class="bg-video">
 
-        </video>
-        <div class="container">
-            <h2>Умные инвестиции в логистику</h2>
-            <p>Присоединитесь к одной из самых развивающихся ниш на рынке</p>
-            <button type="button"><span class="visually-hidden">Далее</span></button>
+            </video>
         </div>
-    </section>
+
+        <div class="container">
+            <section class="main-text">
+                <h2>Умные инвестиции в логистику</h2>
+                <p>Присоединитесь к одной из самых развивающихся ниш на рынке</p>
+            </section>
+        </div>
+
+        <button type="button" class="scroll-btn">
+            <svg width="32" height="18">
+                <line x1="0" y1="0" x2="16" y2="18" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+                <line x1="16" y1="18" x2="32" y2="0" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+            <span class="visually-hidden">Далее</span>
+        </button>
+    </div>
 
     <section>
         <div class="container">

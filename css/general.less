@@ -17,7 +17,7 @@ html {
 }
 
 .container {
-  width: 1688px;
+  width: 100%;
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -32,5 +32,14 @@ html {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@import "navbar";
+@import "main";
 
 @import "responsive/general";
