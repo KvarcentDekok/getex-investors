@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/general.css">
+
+    <title>GetEx</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="container">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="GetEx" width="116" height="50">
+                <span class="visually-hidden">GetEx</span>
+            </a>
+
+            <button type="button"><span class="visually-hidden">Развернуть/свернуть</span></button>
+
+            <ul>
+                <li>
+                    <a href="#">О нас</a>
+                </li>
+                <li>
+                    <a href="#">Модель</a>
+                </li>
+                <li>
+                    <a href="#">Калькулятор</a>
+                </li>
+                <li>
+                    <a href="#">Партнеры</a>
+                </li>
+                <li>
+                    <a href="#">Сотрудничать</a>
+                </li>
+                <li>
+                    <a href="#">Связаться</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h1 class="visually-hidden">GetEx для инвесторов</h1>
+    <section>
+        <video width="100%" height="auto" preload="auto" autoplay="autoplay"
+               loop="loop" poster="img/bg-video.jpg">
+
+        </video>
+        <div class="container">
+            <h2>Умные инвестиции в логистику</h2>
+            <p>Присоединитесь к одной из самых развивающихся ниш на рынке</p>
+            <button type="button"><span class="visually-hidden">Далее</span></button>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Наша цель</h2>
+            <p>
+                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+            </p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section>
+            <h2>Чем мы занимаемся</h2>
+            <p>Платформа GetEx Delivery</p>
+            <p>
+                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+            </p>
+        </section>
+
+        <article>
+            <h2 class="visually-hidden">Иллюстрация</h2>
+
+            <figure>
+                <img src="img/truck.jpg" width="960" height="469" alt="Грузовик на трассе">
+            </figure>
+        </article>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2>Что мы предлагаем</h2>
+            <p>
+                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
+            </p>
+
+            <ol>
+                <li>
+                    <section>
+                        <h3>Стабильность</h3>
+                        <p>
+                            Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+                            Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+                            заполнение шаблона.
+                        </p>
+                        <span>01</span>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <h3>Надежность</h3>
+                        <p>
+                            Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+                            Lorem Ipsum используют потом
+                        </p>
+                        <span>02</span>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <h3>Сервис</h3>
+                        <p>
+                            Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                        </p>
+                        <span>03</span>
+                    </section>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Калькулятор</h2>
+            <p>Давно выяснено, что при оценке дизайна и композиции.</p>
+
+            <div>
+                <form method="post" action="calculator.php">
+                    <div>
+                        <label for="amount">Сумма<noscript>, руб</noscript></label>
+                        <input type="text" id="amount" value="1000000 руб.">
+
+                        <div>
+                            <label for="amount-range" class="visually-hidden">Сумма</label>
+                            <input type="range" id="amount-range" min="10000" max="60000000" value="1000000">
+                            <div>
+                                <span>10 тыс. руб.</span>
+                                <span>60 млн. руб.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="time">Срок<noscript>, лет</noscript></label>
+                        <input type="text" id="time" value="2 года">
+
+                        <div>
+                            <label for="time-range" class="visually-hidden">Срок</label>
+                            <input type="range" id="time-range" min="1" max="10" value="2">
+                            <div>
+                                <span>1 год</span>
+                                <span>10 лет</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="checkbox" id="capitalization" name="capitalization" value="true" checked>
+                    <label for="capitalization">С капитализацией дивидендов</label>
+                    <button type="button"><span class="visually-hidden">Что это?</span></button>
+
+                    <noscript>
+                        <button type="submit">Получить результаты</button>
+                    </noscript>
+                </form>
+
+                <section>
+                    <h3>Вы получаете</h3>
+
+                    <noscript>
+                        Чтобы узнать результаты, нажмите кнопку "Получить результаты".
+                    </noscript>
+
+                    <ul>
+                        <li>
+                            - <span>18</span>% годовых
+                        </li>
+                        <li>
+                            - <span>1 254 000</span> руб.
+                        </li>
+                        <li>
+                            - <span>254 000</span> руб. чистой прибыли
+                        </li>
+                    </ul>
+
+                    <a href="#">Присоединиться</a>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Партнеры</h2>
+            <p>
+                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
+            </p>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>ООО «ТК ДЕНТРО»</h3>
+
+                        <img src="img/dentro.jpg" width="223" height="69" alt="ООО «ТК ДЕНТРО»">
+
+                        <p>
+                            Один из крупнейших российских грузоперевозчиков, работающий на рынке
+                            транспортно-экспедиционных услуг с 2005 года. Компания доставляет грузы по всей территории РФ.
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>ООО «Пармалат МК»</h3>
+
+                        <img src="img/parmalat.jpg" width="223" height="69" alt="ООО «Пармалат МК»">
+
+                        <p>
+                            Группа компаний Parmalat является мультинациональным производителем продуктов питания,
+                            одним из мировых лидеров в производстве молока.
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>ООО «Тиккурила»</h3>
+
+                        <img src="img/tikkurila.jpg" width="223" height="69" alt="ООО «Тиккурила»">
+
+                        <p>
+                            Tikkurila является ведущей компанией в области производства декоративных
+                            лакокрасочных материалов в Финляндии, Швеции и России
+                        </p>
+                    </article>
+                </li>
+            </ul>
+
+            <a href="#">Посмотреть ещё</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Заявка на сотрудничество</h2>
+            <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.</p>
+
+            <form>
+                <fieldset>
+                    <legend>Контактные данные</legend>
+
+                    <div>
+                        <label for="user-name">Как к вам обращаться?</label>
+                        <input type="text" id="user-name" name="name" placeholder="">
+                    </div>
+
+                    <div>
+                        <label for="phone-number">Номер телефона</label>
+                        <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99">
+                    </div>
+
+                    <div>
+                        <label for="user-email">Электронная почта</label>
+                        <input type="email" id="user-email" name="email" placeholder="example@mail.com">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Дополнительная информация</legend>
+
+                    <div>
+                        <label for="investments-amount">Сумма инвестиций</label>
+                        <input type="number" id="investments-amount" name="investments-amount" placeholder="" step="10000">
+                    </div>
+
+                    <div>
+                        <label for="investments-time">Срок инвестирования</label>
+                        <input type="number" id="investments-time" name="investments-time" placeholder="">
+                    </div>
+
+                    <div>
+                        <label for="interest">Чем вас заинтересовал наш проект?</label>
+                        <input type="text" id="interest" name="interest" placeholder="">
+                    </div>
+                </fieldset>
+
+                <button type="submit">Присоединиться</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <section>
+        <div class="container">
+            <h2 class="visually-hidden">Полезные ссылки</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Контакты</h3>
+
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    121614, город Москва, ул. Крылатские
+                                    Холмы, дом 32, корпус 2, Э 1 пом I к 4
+                                    офис 24
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+74951503561">+7 (495) 150-35-61</a>
+                            </li>
+                            <li>
+                                <a href="tel:+78005000261">+7 (800) 500-02-61</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@getexdelivery.com">info@getexdelivery.com</a>
+                            </li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Документы</h3>
+
+                        <ul>
+                            <li>
+                                <a href="#">Пользовательское соглашение</a>
+                            </li>
+                            <li>
+                                <a href="#">Оферта</a>
+                            </li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Направления бизнеса</h3>
+
+                        <ul>
+                            <li>
+                                <a href="#">Для корпоративных заказчиков</a>
+                            </li>
+                            <li>
+                                <a href="#">Для корпоративных перевозчиков</a>
+                            </li>
+                            <li>
+                                <a href="#">GetEx Invest</a>
+                            </li>
+                        </ul>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Копирайт</h2>
+            <p>© ООО "Деливери", Delivery LLC</p>
+        </div>
+    </section>
+</footer>
+</body>
+</html>

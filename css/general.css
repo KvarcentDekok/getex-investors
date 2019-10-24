@@ -1,0 +1,29 @@
+@import "fonts.css";
+img {
+  max-width: 100%;
+  height: auto;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.container {
+  width: 1688px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=general.css.map */
