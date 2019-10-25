@@ -57,15 +57,16 @@
     <div class="first-screen">
         <div class="bg-video">
             <video width="100%" height="auto" preload="auto" autoplay="autoplay" muted
-                   loop poster="img/bg-video.jpg" class="bg-video">
-
+                   loop poster="img/bg-video-poster.jpg" class="bg-video">
+                <source src="video/bg-video.mp4" type="video/mp4">
+                <source src="video/bg-video.webm" type="video/webm">
             </video>
         </div>
 
         <div class="container">
-            <section class="main-text">
-                <h2>Умные инвестиции в логистику</h2>
-                <p>Присоединитесь к одной из самых развивающихся ниш на рынке</p>
+            <section class="flex-text-center">
+                <h2 class="main-title">Умные инвестиции в логистику</h2>
+                <p class="main-description">Присоединитесь к одной из самых развивающихся ниш на рынке</p>
             </section>
         </div>
 
@@ -78,27 +79,29 @@
         </button>
     </div>
 
-    <section>
-        <div class="container">
-            <h2>Наша цель</h2>
-            <p>
+    <section class="page-section">
+        <div class="container flex-text-center">
+            <h2 class="main-title">Наша цель</h2>
+            <p class="main-description">
                 Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
                 Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
             </p>
         </div>
     </section>
 
-    <div class="container">
-        <section>
-            <h2>Чем мы занимаемся</h2>
-            <p>Платформа GetEx Delivery</p>
-            <p>
-                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
-                Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
-            </p>
-        </section>
+    <div class="page-section activity">
+        <div class="container">
+            <section class="activity-text">
+                <h2 class="main-subtitle">Чем мы занимаемся</h2>
+                <p class="text-bigger">Платформа GetEx Delivery</p>
+                <p class="simple-text">
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+                    Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+                </p>
+            </section>
+        </div>
 
-        <article>
+        <article class="activity-picture">
             <h2 class="visually-hidden">Иллюстрация</h2>
 
             <figure>
@@ -107,57 +110,61 @@
         </article>
     </div>
 
-    <section>
+    <section class="page-section">
         <div class="container">
-            <h2>Что мы предлагаем</h2>
-            <p>
-                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
-            </p>
+            <div class="flex-text-center">
+                <h2 class="main-title">Что мы предлагаем</h2>
+                <p class="main-description">
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
+                </p>
+            </div>
 
-            <ol>
-                <li>
+            <ol class="features">
+                <li class="features-item">
                     <section>
-                        <h3>Стабильность</h3>
-                        <p>
+                        <h3 class="main-subtitle">Стабильность</h3>
+                        <p class="simple-text">
                             Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
                             Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
                             заполнение шаблона.
                         </p>
-                        <span>01</span>
+                        <span class="feature-bg">01</span>
                     </section>
                 </li>
-                <li>
+                <li class="features-item">
                     <section>
-                        <h3>Надежность</h3>
-                        <p>
+                        <h3 class="main-subtitle">Надежность</h3>
+                        <p class="simple-text">
                             Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
                             Lorem Ipsum используют потом
                         </p>
-                        <span>02</span>
+                        <span class="feature-bg">02</span>
                     </section>
                 </li>
-                <li>
+                <li class="features-item">
                     <section>
-                        <h3>Сервис</h3>
-                        <p>
+                        <h3 class="main-subtitle">Сервис</h3>
+                        <p class="simple-text">
                             Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
                         </p>
-                        <span>03</span>
+                        <span class="feature-bg">03</span>
                     </section>
                 </li>
             </ol>
         </div>
     </section>
 
-    <section>
+    <section class="page-section">
         <div class="container">
-            <h2>Калькулятор</h2>
-            <p>Давно выяснено, что при оценке дизайна и композиции.</p>
+            <div class="flex-text-center">
+                <h2 class="main-title">Калькулятор</h2>
+                <p class="main-description">Давно выяснено, что при оценке дизайна и композиции.</p>
+            </div>
 
             <div>
                 <form method="post" action="calculator.php">
                     <div>
-                        <label for="amount">Сумма<noscript>, руб</noscript></label>
+                        <label for="amount" class="main-subtitle">Сумма<noscript>, руб</noscript></label>
                         <input type="text" id="amount" value="1000000 руб.">
 
                         <div>
@@ -171,7 +178,7 @@
                     </div>
 
                     <div>
-                        <label for="time">Срок<noscript>, лет</noscript></label>
+                        <label for="time" class="main-subtitle">Срок<noscript>, лет</noscript></label>
                         <input type="text" id="time" value="2 года">
 
                         <div>
@@ -194,7 +201,7 @@
                 </form>
 
                 <section>
-                    <h3>Вы получаете</h3>
+                    <h3 class="main-subtitle">Вы получаете</h3>
 
                     <noscript>
                         Чтобы узнать результаты, нажмите кнопку "Получить результаты".
@@ -218,21 +225,23 @@
         </div>
     </section>
 
-    <section>
+    <section class="page-section">
         <div class="container">
-            <h2>Партнеры</h2>
-            <p>
-                Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
-            </p>
+            <div class="flex-text-center">
+                <h2 class="main-title">Партнеры</h2>
+                <p class="main-description">
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
+                </p>
+            </div>
 
             <ul>
                 <li>
                     <article>
-                        <h3>ООО «ТК ДЕНТРО»</h3>
+                        <h3 class="main-subtitle">ООО «ТК ДЕНТРО»</h3>
 
                         <img src="img/dentro.jpg" width="223" height="69" alt="ООО «ТК ДЕНТРО»">
 
-                        <p>
+                        <p class="simple-text">
                             Один из крупнейших российских грузоперевозчиков, работающий на рынке
                             транспортно-экспедиционных услуг с 2005 года. Компания доставляет грузы по всей территории РФ.
                         </p>
@@ -240,11 +249,11 @@
                 </li>
                 <li>
                     <article>
-                        <h3>ООО «Пармалат МК»</h3>
+                        <h3 class="main-subtitle">ООО «Пармалат МК»</h3>
 
                         <img src="img/parmalat.jpg" width="223" height="69" alt="ООО «Пармалат МК»">
 
-                        <p>
+                        <p class="simple-text">
                             Группа компаний Parmalat является мультинациональным производителем продуктов питания,
                             одним из мировых лидеров в производстве молока.
                         </p>
@@ -252,11 +261,11 @@
                 </li>
                 <li>
                     <article>
-                        <h3>ООО «Тиккурила»</h3>
+                        <h3 class="main-subtitle">ООО «Тиккурила»</h3>
 
                         <img src="img/tikkurila.jpg" width="223" height="69" alt="ООО «Тиккурила»">
 
-                        <p>
+                        <p class="simple-text">
                             Tikkurila является ведущей компанией в области производства декоративных
                             лакокрасочных материалов в Финляндии, Швеции и России
                         </p>
@@ -268,14 +277,18 @@
         </div>
     </section>
 
-    <section>
+    <section class="page-section">
         <div class="container">
-            <h2>Заявка на сотрудничество</h2>
-            <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.</p>
+            <div class="flex-text-center">
+                <h2 class="main-title">Заявка на сотрудничество</h2>
+                <p class="main-description">
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
+                </p>
+            </div>
 
             <form>
                 <fieldset>
-                    <legend>Контактные данные</legend>
+                    <legend class="main-subtitle">Контактные данные</legend>
 
                     <div>
                         <label for="user-name">Как к вам обращаться?</label>
@@ -294,7 +307,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend>Дополнительная информация</legend>
+                    <legend class="main-subtitle">Дополнительная информация</legend>
 
                     <div>
                         <label for="investments-amount">Сумма инвестиций</label>
