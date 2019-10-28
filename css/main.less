@@ -99,6 +99,8 @@
 }
 
 .main-subtitle {
+  display: block;
+  width: 100%;
   margin-top: 0;
   margin-bottom: 16px;
 
@@ -203,26 +205,111 @@
   list-style: none;
 
   &-item {
-    max-width: 33.3%;
-    padding: 0 16.5px;
+    width: 33.3%;
+    padding: 0 16.5px 0 36.5px;
 
     section {
-      padding: 50px 17px 50px 45px;
+      height: 100%;
+      padding: 32px 17px 50px 24px;
 
       position: relative;
+
+      background-color: #f8f8f8;
+    }
+
+    .main-subtitle,
+    .simple-text {
+      position: relative;
+      z-index: 1;
     }
   }
 }
 
 .feature-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  top: -18px;
+  left: -20px;
 
   font-family: "Montserrat Bold", "Arial", sans-serif;
   font-size: 251px;
   line-height: 180px;
   color: #EFEFEF;
   user-select: none;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 60px;
+
+  &-form {
+    min-width: 821px;
+    margin-right: 32px;
+  }
+
+  &-result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 526px;
+
+    .button {
+      margin-top: auto;
+    }
+  }
+}
+
+.results-list {
+  margin-top: 0;
+  padding: 0;
+
+  font-family: "Montserrat Regular", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 45px;
+  color: @text-color-main;
+
+  list-style: none;
+}
+
+.suggestion-elem {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 12px;
+  border: none;
+
+  vertical-align: -15%;
+
+  &:hover,
+  &:focus {
+    path:first-child {
+      fill: @main-color;
+    }
+  }
+}
+
+.partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 60px -16px 32px -16px;
+  padding: 0;
+
+  list-style: none;
+
+  &-item {
+    width: 33.3%;
+    padding: 0 16px;
+
+    .card {
+      height: 100%;
+    }
+  }
+}
+
+.request-form {
+  width: 821px;
+  margin: 60px auto 0;
 }

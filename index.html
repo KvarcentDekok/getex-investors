@@ -20,9 +20,9 @@
 
             <button type="button" class="toggler">
                 <svg width="40" height="40">
-                    <line x1="5" y1="11.7" x2="35" y2="11.7" stroke="#ffffff" stroke-width="3.3" />
-                    <line x1="5" y1="20" x2="35" y2="20" stroke="#ffffff" stroke-width="3.3" />
-                    <line x1="5" y1="28.3" x2="35" y2="28.3" stroke="#ffffff" stroke-width="3.3" />
+                    <line x1="5" y1="11.7" x2="35" y2="11.7" stroke="#ffffff" stroke-width="3.3"></line>
+                    <line x1="5" y1="20" x2="35" y2="20" stroke="#ffffff" stroke-width="3.3"></line>
+                    <line x1="5" y1="28.3" x2="35" y2="28.3" stroke="#ffffff" stroke-width="3.3"></line>
                 </svg>
 
                 <span class="visually-hidden">Развернуть/свернуть</span>
@@ -72,8 +72,8 @@
 
         <button type="button" class="scroll-btn">
             <svg width="32" height="18">
-                <line x1="0" y1="0" x2="16" y2="18" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
-                <line x1="16" y1="18" x2="32" y2="0" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+                <line x1="0" y1="0" x2="16" y2="18" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"></line>
+                <line x1="16" y1="18" x2="32" y2="0" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"></line>
             </svg>
             <span class="visually-hidden">Далее</span>
         </button>
@@ -161,53 +161,73 @@
                 <p class="main-description">Давно выяснено, что при оценке дизайна и композиции.</p>
             </div>
 
-            <div>
-                <form method="post" action="calculator.php">
-                    <div>
+            <div class="calculator">
+                <form method="post" action="calculator.php" class="card calculator-form">
+                    <div class="form-group">
                         <label for="amount" class="main-subtitle">Сумма<noscript>, руб</noscript></label>
-                        <input type="text" id="amount" value="1000000 руб.">
+                        <input type="text" class="unobvious-input" id="amount" value="1 000 000 руб.">
 
-                        <div>
+                        <div class="custom-range">
                             <label for="amount-range" class="visually-hidden">Сумма</label>
                             <input type="range" id="amount-range" min="10000" max="60000000" value="1000000">
-                            <div>
+                            <div class="range-marks">
                                 <span>10 тыс. руб.</span>
                                 <span>60 млн. руб.</span>
                             </div>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="time" class="main-subtitle">Срок<noscript>, лет</noscript></label>
-                        <input type="text" id="time" value="2 года">
+                        <input type="text" class="unobvious-input" id="time" value="2 года">
 
-                        <div>
+                        <div class="custom-range">
                             <label for="time-range" class="visually-hidden">Срок</label>
                             <input type="range" id="time-range" min="1" max="10" value="2">
-                            <div>
+                            <div class="range-marks">
                                 <span>1 год</span>
                                 <span>10 лет</span>
                             </div>
                         </div>
                     </div>
 
-                    <input type="checkbox" id="capitalization" name="capitalization" value="true" checked>
-                    <label for="capitalization">С капитализацией дивидендов</label>
-                    <button type="button"><span class="visually-hidden">Что это?</span></button>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="capitalization" name="capitalization" value="true" checked>
+                        <label for="capitalization">С капитализацией дивидендов</label>
+                        <div class="suggestion-elem" tabindex="0"
+                             data-popover="Давно выяснено, что при оценке дизайна
+                              и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum. ">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="16" height="16" viewBox="0 0 16 16">
+                                <defs>
+                                    <clipPath id="a">
+                                        <rect width="16" height="16" transform="translate(614 3022)" fill="#838e99"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g transform="translate(-614 -3022)" clip-path="url(#a)">
+                                    <g transform="translate(614 3022)">
+                                        <path d="M7.667,1.333a5.667,5.667,0,1,0,0,11.333H8v2C11.24,13.107,13.333,10,13.333,7A5.67,5.67,0,0,0,7.667,1.333ZM8.333,11H7V9.667H8.333Zm0-2.333H7c0-2.167,2-2,2-3.333a1.333,1.333,0,1,0-2.667,0H5a2.667,2.667,0,0,1,5.333,0C10.333,7,8.333,7.167,8.333,8.667Z" fill="#838e99"></path>
+                                        <path d="M0,0H16V16H0Z" fill="none"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="visually-hidden">Что это?</span>
+                        </div>
+                    </div>
 
                     <noscript>
                         <button type="submit">Получить результаты</button>
                     </noscript>
                 </form>
 
-                <section>
+                <section class="card calculator-result">
                     <h3 class="main-subtitle">Вы получаете</h3>
 
                     <noscript>
                         Чтобы узнать результаты, нажмите кнопку "Получить результаты".
                     </noscript>
 
-                    <ul>
+                    <ul class="results-list">
                         <li>
                             - <span>18</span>% годовых
                         </li>
@@ -219,7 +239,7 @@
                         </li>
                     </ul>
 
-                    <a href="#">Присоединиться</a>
+                    <a href="#" class="button button-main">Присоединиться</a>
                 </section>
             </div>
         </div>
@@ -230,13 +250,14 @@
             <div class="flex-text-center">
                 <h2 class="main-title">Партнеры</h2>
                 <p class="main-description">
-                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+                    Lorem Ipsum.
                 </p>
             </div>
 
-            <ul>
-                <li>
-                    <article>
+            <ul class="partners">
+                <li class="partners-item">
+                    <article class="card">
                         <h3 class="main-subtitle">ООО «ТК ДЕНТРО»</h3>
 
                         <img src="img/dentro.jpg" width="223" height="69" alt="ООО «ТК ДЕНТРО»">
@@ -247,8 +268,8 @@
                         </p>
                     </article>
                 </li>
-                <li>
-                    <article>
+                <li class="partners-item">
+                    <article class="card">
                         <h3 class="main-subtitle">ООО «Пармалат МК»</h3>
 
                         <img src="img/parmalat.jpg" width="223" height="69" alt="ООО «Пармалат МК»">
@@ -259,8 +280,8 @@
                         </p>
                     </article>
                 </li>
-                <li>
-                    <article>
+                <li class="partners-item">
+                    <article class="card">
                         <h3 class="main-subtitle">ООО «Тиккурила»</h3>
 
                         <img src="img/tikkurila.jpg" width="223" height="69" alt="ООО «Тиккурила»">
@@ -273,7 +294,7 @@
                 </li>
             </ul>
 
-            <a href="#">Посмотреть ещё</a>
+            <a href="#" class="button button-outline">Посмотреть ещё</a>
         </div>
     </section>
 
@@ -286,42 +307,60 @@
                 </p>
             </div>
 
-            <form>
-                <fieldset>
+            <form class="card request-form" method="post" action="#">
+                <fieldset class="form-field">
                     <legend class="main-subtitle">Контактные данные</legend>
 
-                    <div>
-                        <label for="user-name">Как к вам обращаться?</label>
-                        <input type="text" id="user-name" name="name" placeholder="">
-                    </div>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <div class="custom-text-input">
+                                <label for="user-name">Как к вам обращаться?</label>
+                                <input type="text" id="user-name" name="name" placeholder="">
+                            </div>
+                        </div>
 
-                    <div>
-                        <label for="phone-number">Номер телефона</label>
-                        <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99">
-                    </div>
+                        <div class="col-6">
+                            <div class="custom-text-input">
+                                <label for="phone-number">Номер телефона</label>
+                                <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99">
+                            </div>
+                        </div>
 
-                    <div>
-                        <label for="user-email">Электронная почта</label>
-                        <input type="email" id="user-email" name="email" placeholder="example@mail.com">
+                        <div class="col-6">
+                            <div class="custom-text-input">
+                                <label for="user-email">Электронная почта</label>
+                                <input type="email" id="user-email" name="email" placeholder="example@mail.com">
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="form-field">
                     <legend class="main-subtitle">Дополнительная информация</legend>
 
-                    <div>
-                        <label for="investments-amount">Сумма инвестиций</label>
-                        <input type="number" id="investments-amount" name="investments-amount" placeholder="" step="10000">
-                    </div>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <div class="custom-text-input">
+                                <label for="investments-amount">Сумма инвестиций</label>
+                                <input type="number" id="investments-amount" name="investments-amount" placeholder=""
+                                       step="10000">
+                            </div>
 
-                    <div>
-                        <label for="investments-time">Срок инвестирования</label>
-                        <input type="number" id="investments-time" name="investments-time" placeholder="">
-                    </div>
+                        </div>
 
-                    <div>
-                        <label for="interest">Чем вас заинтересовал наш проект?</label>
-                        <input type="text" id="interest" name="interest" placeholder="">
+                        <div class="col-6">
+                            <div class="custom-text-input">
+                                <label for="investments-time">Срок инвестирования</label>
+                                <input type="number" id="investments-time" name="investments-time" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="custom-text-input">
+                                <label for="interest">Чем вас заинтересовал наш проект?</label>
+                                <input type="text" id="interest" name="interest" placeholder="">
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
 

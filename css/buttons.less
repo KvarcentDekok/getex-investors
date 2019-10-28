@@ -1,0 +1,42 @@
+@import "variables";
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 2px solid @main-color;
+
+  font-family: "Montserrat Medium", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  vertical-align: middle;
+  text-decoration: none;
+
+  border-radius: 4px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.16);
+  transition: box-shadow 200ms;
+
+  &:hover {
+    box-shadow: @shadow-main-hover;
+  }
+
+  &-main {
+    color: #ffffff;
+
+    background-color: @main-color;
+    box-shadow: @shadow-main;
+
+    &:active {
+      color: darken(#ffffff, 50%);
+    }
+  }
+
+  &-outline {
+    color: @main-color;
+
+    background-color: #ffffff;
+
+    &:active {
+      color: fade(@main-color, 50%);
+    }
+  }
+}
