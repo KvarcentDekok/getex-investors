@@ -180,6 +180,8 @@
 
 .form-field {
   border: none;
+  padding: 0;
+  margin-bottom: 32px;
 }
 
 .custom-text-input {
@@ -189,6 +191,45 @@
 
   input {
     width: 100%;
-    padding: 25px 16px 11px;
+    padding: 17px 16px;
+    border: none;
+
+    font-family: "Montserrat Medium", "Arial", sans-serif;
+    font-size: 16px;
+    color: @text-color-main;
+
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:not(:placeholder-shown) {
+      padding: 24px 16px 10px;
+
+      & + label {
+        top: 8px;
+
+        font-size: 12px;
+      }
+    }
+
+    &:focus {
+      background-color: #ffffff;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+
+    font-family: "Montserrat Medium", "Arial", sans-serif;
+    font-size: 16px;
+    color: rgba(0 ,0, 0, 0.6);
+
+    pointer-events: none;
+    transition: all 200ms;
   }
 }

@@ -20,9 +20,9 @@
 
             <button type="button" class="toggler">
                 <svg width="40" height="40">
-                    <line x1="5" y1="11.7" x2="35" y2="11.7" stroke="#ffffff" stroke-width="3.3"></line>
-                    <line x1="5" y1="20" x2="35" y2="20" stroke="#ffffff" stroke-width="3.3"></line>
-                    <line x1="5" y1="28.3" x2="35" y2="28.3" stroke="#ffffff" stroke-width="3.3"></line>
+                    <line class="line-1" x1="5" y1="11.7" x2="35" y2="11.7" stroke="#ffffff" stroke-width="3.3"></line>
+                    <line class="line-2" x1="5" y1="20" x2="35" y2="20" stroke="#ffffff" stroke-width="3.3"></line>
+                    <line class="line-3" x1="5" y1="28.3" x2="35" y2="28.3" stroke="#ffffff" stroke-width="3.3"></line>
                 </svg>
 
                 <span class="visually-hidden">Развернуть/свернуть</span>
@@ -314,22 +314,22 @@
                     <div class="form-row">
                         <div class="col-6">
                             <div class="custom-text-input">
+                                <input type="text" id="user-name" name="name" placeholder="Фамилия Имя Отчество">
                                 <label for="user-name">Как к вам обращаться?</label>
-                                <input type="text" id="user-name" name="name" placeholder="">
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="custom-text-input">
-                                <label for="phone-number">Номер телефона</label>
                                 <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99">
+                                <label for="phone-number">Номер телефона</label>
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="custom-text-input">
-                                <label for="user-email">Электронная почта</label>
                                 <input type="email" id="user-email" name="email" placeholder="example@mail.com">
+                                <label for="user-email">Электронная почта</label>
                             </div>
                         </div>
                     </div>
@@ -341,43 +341,44 @@
                     <div class="form-row">
                         <div class="col-6">
                             <div class="custom-text-input">
+                                <input type="number" id="investments-amount" name="investments-amount"
+                                       placeholder="Целое число" step="10000">
                                 <label for="investments-amount">Сумма инвестиций</label>
-                                <input type="number" id="investments-amount" name="investments-amount" placeholder=""
-                                       step="10000">
                             </div>
 
                         </div>
 
                         <div class="col-6">
                             <div class="custom-text-input">
+                                <input type="number" id="investments-time" name="investments-time"
+                                       placeholder="Целое число">
                                 <label for="investments-time">Срок инвестирования</label>
-                                <input type="number" id="investments-time" name="investments-time" placeholder="">
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="custom-text-input">
+                                <input type="text" id="interest" name="interest" placeholder="Произвольное описание">
                                 <label for="interest">Чем вас заинтересовал наш проект?</label>
-                                <input type="text" id="interest" name="interest" placeholder="">
                             </div>
                         </div>
                     </div>
                 </fieldset>
 
-                <button type="submit">Присоединиться</button>
+                <button type="submit" class="button button-main">Присоединиться</button>
             </form>
         </div>
     </section>
 </main>
 
 <footer>
-    <section>
+    <section class="footer-links">
         <div class="container">
             <h2 class="visually-hidden">Полезные ссылки</h2>
 
-            <ul>
+            <ul class="groups-list">
                 <li>
-                    <article>
+                    <article class="links-list">
                         <h3>Контакты</h3>
 
                         <ul>
@@ -401,7 +402,7 @@
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article class="links-list">
                         <h3>Документы</h3>
 
                         <ul>
@@ -415,7 +416,7 @@
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article class="links-list">
                         <h3>Направления бизнеса</h3>
 
                         <ul>
@@ -435,9 +436,9 @@
         </div>
     </section>
 
-    <section>
+    <section class="footer-copyright">
         <div class="container">
-            <h2>Копирайт</h2>
+            <h2 class="visually-hidden">Копирайт</h2>
             <p>© ООО "Деливери", Delivery LLC</p>
         </div>
     </section>

@@ -3,25 +3,50 @@
     .toggler {
       display: block;
     }
+
+    &.expand {
+      background-color: rgba(42, 42, 42, 0.83);
+
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+
+        transition: all 200ms;
+      }
+    }
   }
 
   .nav-list {
     display: none;
     height: 0;
-
-    &.show {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      width: 100%;
-
-      transition: all 200ms;
-    }
   }
 
   .nav-link {
     padding-top: 20px;
     padding-bottom: 20px;
+
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .logo {
+      height: 64px;
+    }
+
+    .toggler {
+      margin-top: 12px;
+      margin-bottom: 12px;
+
+      transform: scale(0.6);
+    }
+
+    &.expand {
+      background-color: rgba(0, 0, 0, 0.83);
+    }
   }
 }

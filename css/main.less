@@ -93,7 +93,6 @@
 
   font-family: "Montserrat Black", Arial, sans-serif;
   font-size: 32px;
-  line-height: 68px;
   text-transform: uppercase;
   color: @text-color-main;
 }
@@ -135,9 +134,14 @@
   @height: 469px;
 
   display: flex;
-  min-height: @height + 120px;
+  min-height: @height;
+  padding: 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
 
   position: relative;
+
+  background-color: @bg-color;
 
   &-text,
   &-picture {
@@ -150,6 +154,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    padding: 16px 16px 16px 0;
   }
 
   &-picture {
@@ -157,7 +162,7 @@
     width: 50%;
 
     position: absolute;
-    top: 60px;
+    top: 0;
     right: 0;
 
     overflow: hidden;
@@ -168,7 +173,10 @@
 
     img {
       max-width: none;
-      width: 100%;
+      width: auto;
+      height: auto;
+      min-height: 100%;
+      min-width: 100%;
 
       position: absolute;
       top: 50%;
@@ -312,4 +320,10 @@
 .request-form {
   width: 821px;
   margin: 60px auto 0;
+
+  .main-subtitle {
+    margin-bottom: 24px;
+  }
 }
+
+@import "responsive/main";
