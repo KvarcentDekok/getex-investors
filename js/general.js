@@ -23,6 +23,8 @@ let calculatorForm = document.querySelector('.calculator-form'),
     rangeInputs = calculatorForm.querySelectorAll('.custom-range input'),
     numberInputs = calculatorForm.querySelectorAll('.unobvious-input');
 
+calcResults(rangeInputs[0].value, rangeInputs[1].value);
+
 function addRangeInputEvent (input) {
     let event;
 
@@ -51,6 +53,8 @@ function addRangeInputEvent (input) {
         }
 
         targetInput.value = Number(this.value).toLocaleString('ru') + unit;
+
+        calcResults(rangeInputs[0].value, rangeInputs[1].value);
     })
 }
 
@@ -101,6 +105,8 @@ function addNumberInputEvent (input) {
         differentLengthValue = currentDifferentLengthValue;
 
         this.selectionStart = this.selectionEnd = start;
+
+        calcResults(rangeInputs[0].value, rangeInputs[1].value);
     })
 }
 
@@ -122,6 +128,23 @@ joinButton.addEventListener('click', function (evt) {
         cloneInput.value = parseInt(numberInputs[i].value.replace( /\s/g, ''));
     }
 });
+
+function calcResults (amount, time) {
+    let resultsOut = {},
+        results = {};
+
+    resultsOut.interestRate = document.getElementById('result-interest-rate');
+    resultsOut.income = document.getElementById('result-income');
+    resultsOut.profit = document.getElementById('result-profit');
+
+    results.interestRate = time * 2;
+    results.income = Number(amount) + ((amount * results.interestRate / 100) * time);
+    results.profit = results.income - amount;
+
+    resultsOut.interestRate.textContent = results.interestRate;
+    resultsOut.income.textContent = results.income;
+    resultsOut.profit.textContent = results.profit;
+}
 
 
 function isIe() {

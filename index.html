@@ -162,11 +162,11 @@
             </div>
 
             <div class="calculator">
-                <form method="post" action="calculator.php" class="card calculator-form">
+                <form method="post" action="server/calculator.php" class="card calculator-form">
                     <div class="form-group">
                         <label for="amount" class="main-subtitle">Сумма<noscript>, руб</noscript></label>
-                        <input type="text" class="unobvious-input" id="amount" data-clone="investments-amount"
-                               value="1 000 000 руб.">
+                        <input type="text" class="unobvious-input" name="amount" id="amount"
+                               data-clone="investments-amount" value="1 000 000 руб.">
 
                         <div class="custom-range d-sm-none noscript-hidden">
                             <label for="amount-range"  class="visually-hidden">Сумма</label>
@@ -181,7 +181,7 @@
 
                     <div class="form-group">
                         <label for="time" class="main-subtitle">Срок<noscript>, лет</noscript></label>
-                        <input type="text" class="unobvious-input" id="time" data-clone="investments-time"
+                        <input type="text" class="unobvious-input" name="time" id="time" data-clone="investments-time"
                                value="2 года">
 
                         <div class="custom-range d-sm-none noscript-hidden">
@@ -233,13 +233,13 @@
 
                     <ul class="results-list noscript-hidden">
                         <li>
-                            - <span>18</span>% годовых
+                            - <span id="result-interest-rate">18</span>% годовых
                         </li>
                         <li>
-                            - <span>1 254 000</span> руб.
+                            - <span id="result-income">1 254 000</span> руб.
                         </li>
                         <li>
-                            - <span>254 000</span> руб. чистой прибыли
+                            - <span id="result-profit">254 000</span> руб. чистой прибыли
                         </li>
                     </ul>
 

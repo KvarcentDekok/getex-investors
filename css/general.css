@@ -322,7 +322,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 64px 0;
+  padding-top: 64px;
+  padding-left: 0;
   margin: 0 -16.5px;
   list-style: none;
 }
@@ -505,6 +506,9 @@ html {
   }
 }
 @media (max-width: 768px) {
+  .page-section {
+    padding-top: 60px;
+  }
   .main-title,
   .first-screen .main-title {
     font-size: 24px;
@@ -514,8 +518,14 @@ html {
   .first-screen .main-description {
     font-size: 16px;
   }
+  .activity {
+    margin-top: 60px;
+    padding-top: 0;
+  }
   .features-item {
     width: 100%;
+    padding-left: 16px;
+    margin-bottom: 24px;
   }
   .feature-bg {
     top: -4px;
