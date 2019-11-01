@@ -5,9 +5,10 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  margin-bottom: 60px;
 
   position: relative;
+
+  overflow: hidden; /*for Edge, IE*/
 
   .main-title {
     max-width: 658px;
@@ -69,6 +70,7 @@
 
   position: absolute;
   bottom: 0;
+  left: 0;
 
   background-color: transparent;
   cursor: pointer;
@@ -82,8 +84,7 @@
 }
 
 .page-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 120px;
 }
 
 .main-title {
@@ -135,9 +136,9 @@
 
   display: flex;
   min-height: @height;
+  height: 1px; /*for IE*/
   padding: 0;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 120px;
 
   position: relative;
 
@@ -182,6 +183,10 @@
       top: 50%;
 
       transform: translateY(-50%);
+    }
+
+    .container {
+      height: 100%; /*for IE*/
     }
   }
 
@@ -255,16 +260,30 @@
   &-form {
     min-width: 821px;
     margin-right: 32px;
+
+    noscript {
+      .button {
+        margin-top: 24px;
+      }
+
+    }
   }
 
   &-result {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-width: 526px;
+    width: 526px;
 
     .button {
       margin-top: auto;
+    }
+
+    noscript {
+      font-family: "Montserrat Regular", "Arial", sans-serif;
+      font-size: 24px;
+      line-height: 45px;
+      color: @text-color-main;
     }
   }
 }

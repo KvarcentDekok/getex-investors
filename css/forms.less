@@ -5,6 +5,7 @@
 }
 
 .unobvious-input {
+  width: 100%;
   border: none;
 
   font-family: "Montserrat Regular", "Arial", sans-serif;
@@ -27,6 +28,7 @@
     padding: 0;
 
     -webkit-appearance: none;
+    background-color: transparent;
 
     &:focus {
       outline: none;
@@ -60,6 +62,7 @@
       cursor: pointer;
       background-color: #e5e5e5;
       border-radius: 129px;
+      border-color: transparent;
     }
 
     &::-ms-track {
@@ -101,6 +104,7 @@
       border: 8px solid @main-color;
       height: 24px;
       width: 24px;
+      box-sizing: border-box;
 
       border-radius: 50%;
       background-color: #ffffff;
@@ -120,6 +124,14 @@
       transition: box-shadow 200ms;
     }
   }
+
+  @supports (-ms-ime-align:auto) {
+    input {
+      &::-webkit-slider-thumb {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .range-marks {
@@ -134,6 +146,9 @@
 }
 
 .custom-checkbox {
+  display: flex;
+  align-items: center;
+
   input {
     position: absolute;
 
@@ -164,7 +179,7 @@
       border: 2px solid #e5e5e5;
 
       position: absolute;
-      top: 2px;
+      top: 50%;
       left: 0;
 
       content: "";
@@ -174,6 +189,7 @@
       transition:
               background-color 200ms,
               box-shadow 200ms;
+      transform: translateY(-50%);
     }
   }
 }
@@ -181,7 +197,7 @@
 .form-field {
   border: none;
   padding: 0;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .custom-text-input {
@@ -205,6 +221,14 @@
       color: transparent;
     }
 
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &::-ms-input-placeholder {
+      color: transparent;
+    }
+
     &:not(:placeholder-shown) {
       padding: 24px 16px 10px;
 
@@ -215,12 +239,37 @@
       }
     }
 
+    &:not(:-ms-input-placeholder) {
+      padding: 24px 16px 10px;
+
+      & + label {
+        top: 8px;
+
+        font-size: 12px;
+      }
+    }
+
+
     &:focus {
       background-color: #ffffff;
     }
   }
 
+  @supports (-ms-ime-align:auto) {
+    input {
+      padding: 24px 16px 10px;
+
+      & + label {
+        top: 8px;
+
+        font-size: 12px;
+      }
+    }
+  }
+
   label {
+    max-width: calc(100% - 32px);
+
     position: absolute;
     top: 17px;
     left: 16px;
@@ -228,8 +277,12 @@
     font-family: "Montserrat Medium", "Arial", sans-serif;
     font-size: 16px;
     color: rgba(0 ,0, 0, 0.6);
+    white-space: nowrap;
 
     pointer-events: none;
     transition: all 200ms;
+    overflow: hidden;
   }
 }
+
+@import "responsive/forms";

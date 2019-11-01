@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  [data-direction-sm="left"] {
+    &::before {
+      left: unset;
+      right: calc(100% + 10px);
+    }
+
+    &::after {
+      right: unset;
+      left: -18px;
+
+      transform:
+              translateY(-50%)
+              rotate(135deg);
+    }
+  }
+}

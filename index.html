@@ -30,22 +30,22 @@
 
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">О нас</a>
+                    <a class="nav-link" href="#about">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">Модель</a>
+                    <a class="nav-link" href="#features">Модель</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">Калькулятор</a>
+                    <a class="nav-link" href="#calculator">Калькулятор</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">Партнеры</a>
+                    <a class="nav-link" href="#partners">Партнеры</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">Сотрудничать</a>
+                    <a class="nav-link" href="#request">Сотрудничать</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">Связаться</a>
+                    <a class="nav-link" href="#contacts">Связаться</a>
                 </li>
             </ul>
         </div>
@@ -79,7 +79,7 @@
         </button>
     </div>
 
-    <section class="page-section">
+    <section class="page-section" id="about">
         <div class="container flex-text-center">
             <h2 class="main-title">Наша цель</h2>
             <p class="main-description">
@@ -110,7 +110,7 @@
         </article>
     </div>
 
-    <section class="page-section">
+    <section class="page-section" id="features">
         <div class="container">
             <div class="flex-text-center">
                 <h2 class="main-title">Что мы предлагаем</h2>
@@ -154,7 +154,7 @@
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section" id="calculator">
         <div class="container">
             <div class="flex-text-center">
                 <h2 class="main-title">Калькулятор</h2>
@@ -165,11 +165,13 @@
                 <form method="post" action="calculator.php" class="card calculator-form">
                     <div class="form-group">
                         <label for="amount" class="main-subtitle">Сумма<noscript>, руб</noscript></label>
-                        <input type="text" class="unobvious-input" id="amount" value="1 000 000 руб.">
+                        <input type="text" class="unobvious-input" id="amount" data-clone="investments-amount"
+                               value="1 000 000 руб.">
 
-                        <div class="custom-range">
-                            <label for="amount-range" class="visually-hidden">Сумма</label>
-                            <input type="range" id="amount-range" min="10000" max="60000000" value="1000000">
+                        <div class="custom-range d-sm-none noscript-hidden">
+                            <label for="amount-range"  class="visually-hidden">Сумма</label>
+                            <input type="range" id="amount-range" data-target="amount" data-unit="руб." min="10000"
+                                   max="60000000" value="1000000" step="10000">
                             <div class="range-marks">
                                 <span>10 тыс. руб.</span>
                                 <span>60 млн. руб.</span>
@@ -179,11 +181,13 @@
 
                     <div class="form-group">
                         <label for="time" class="main-subtitle">Срок<noscript>, лет</noscript></label>
-                        <input type="text" class="unobvious-input" id="time" value="2 года">
+                        <input type="text" class="unobvious-input" id="time" data-clone="investments-time"
+                               value="2 года">
 
-                        <div class="custom-range">
+                        <div class="custom-range d-sm-none noscript-hidden">
                             <label for="time-range" class="visually-hidden">Срок</label>
-                            <input type="range" id="time-range" min="1" max="10" value="2">
+                            <input type="range" id="time-range" data-unit="лет" data-target="time" min="1" max="10"
+                                   value="2">
                             <div class="range-marks">
                                 <span>1 год</span>
                                 <span>10 лет</span>
@@ -194,7 +198,7 @@
                     <div class="custom-checkbox">
                         <input type="checkbox" id="capitalization" name="capitalization" value="true" checked>
                         <label for="capitalization">С капитализацией дивидендов</label>
-                        <div class="suggestion-elem" tabindex="0"
+                        <div class="suggestion-elem" tabindex="0" data-direction-sm="left"
                              data-popover="Давно выяснено, что при оценке дизайна
                               и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum. ">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -216,7 +220,7 @@
                     </div>
 
                     <noscript>
-                        <button type="submit">Получить результаты</button>
+                        <button type="submit" class="button button-outline">Получить результаты</button>
                     </noscript>
                 </form>
 
@@ -227,7 +231,7 @@
                         Чтобы узнать результаты, нажмите кнопку "Получить результаты".
                     </noscript>
 
-                    <ul class="results-list">
+                    <ul class="results-list noscript-hidden">
                         <li>
                             - <span>18</span>% годовых
                         </li>
@@ -239,13 +243,13 @@
                         </li>
                     </ul>
 
-                    <a href="#" class="button button-main">Присоединиться</a>
+                    <a href="#request" id="join-button" class="button button-main">Присоединиться</a>
                 </section>
             </div>
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section" id="partners">
         <div class="container">
             <div class="flex-text-center">
                 <h2 class="main-title">Партнеры</h2>
@@ -298,7 +302,7 @@
         </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section" id="request">
         <div class="container">
             <div class="flex-text-center">
                 <h2 class="main-title">Заявка на сотрудничество</h2>
@@ -306,27 +310,29 @@
                     Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum.
                 </p>
             </div>
+        </div>
 
+        <div class="container container-sm-fluid">
             <form class="card request-form" method="post" action="#">
                 <fieldset class="form-field">
                     <legend class="main-subtitle">Контактные данные</legend>
 
                     <div class="form-row">
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="text" id="user-name" name="name" placeholder="Фамилия Имя Отчество">
                                 <label for="user-name">Как к вам обращаться?</label>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99">
                                 <label for="phone-number">Номер телефона</label>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="email" id="user-email" name="email" placeholder="example@mail.com">
                                 <label for="user-email">Электронная почта</label>
@@ -339,7 +345,7 @@
                     <legend class="main-subtitle">Дополнительная информация</legend>
 
                     <div class="form-row">
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="number" id="investments-amount" name="investments-amount"
                                        placeholder="Целое число" step="10000">
@@ -348,7 +354,7 @@
 
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="number" id="investments-time" name="investments-time"
                                        placeholder="Целое число">
@@ -372,7 +378,7 @@
 </main>
 
 <footer>
-    <section class="footer-links">
+    <section class="footer-links" id="contacts">
         <div class="container">
             <h2 class="visually-hidden">Полезные ссылки</h2>
 
@@ -443,5 +449,9 @@
         </div>
     </section>
 </footer>
+
+<script src="js/animation.js"></script>
+<script src="js/general.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>
