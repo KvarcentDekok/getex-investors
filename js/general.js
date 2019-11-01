@@ -141,10 +141,54 @@ function calcResults (amount, time) {
     results.income = Number(amount) + ((amount * results.interestRate / 100) * time);
     results.profit = results.income - amount;
 
-    resultsOut.interestRate.textContent = results.interestRate;
-    resultsOut.income.textContent = results.income;
-    resultsOut.profit.textContent = results.profit;
+    resultsOut.interestRate.textContent = results.interestRate.toLocaleString('ru');
+    resultsOut.income.textContent = results.income.toLocaleString('ru');
+    resultsOut.profit.textContent = results.profit.toLocaleString('ru');
 }
+
+
+/* Партнёры */
+let partners = document.querySelector('.partners'),
+    partnersItems = partners.querySelectorAll('.partners-item'),
+    morePartnersBtn = document.getElementById('more-partners'),
+    itemHeight = partnersItems[0].offsetHeight;
+
+for (let i = 3; i < partnersItems.length; i++) {
+    partnersItems[i].classList.add('visually-hidden');
+}
+
+morePartnersBtn.addEventListener('click', function () {
+    let hiddenItems = partners.querySelectorAll('.partners-item.visually-hidden'),
+        numberOfHiddenItems = hiddenItems.length,
+        currentHeight = partners.clientHeight,
+        numberToShowItems;
+
+    partners.style.height = currentHeight + 'px';
+
+    setTimeout(function () {
+        partners.style.height = (currentHeight + itemHeight + 24) + 'px';
+        console.log(partners.style.height);
+    });
+
+    if (numberOfHiddenItems >= 3) {
+        numberToShowItems = 3;
+    } else {
+        numberToShowItems = numberOfHiddenItems;
+    }
+
+    for (let i = 0; i < numberToShowItems; i++) {
+        hiddenItems[i].classList.remove('visually-hidden');
+        numberOfHiddenItems -= 1;
+    }
+
+    setTimeout(function () {
+        partners.removeAttribute('style');
+    }, 400);
+
+    if (numberOfHiddenItems === 0) {
+        morePartnersBtn.classList.add('d-none');
+    }
+});
 
 
 function isIe() {

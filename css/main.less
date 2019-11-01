@@ -322,14 +322,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 60px -16px 32px -16px;
+  margin: 60px -16px 8px -16px;
   padding: 0;
 
   list-style: none;
+  transition: height 400ms;
+  overflow: hidden;
 
   &-item {
     width: 33.3%;
     padding: 0 16px;
+    margin-bottom: 24px;
 
     .card {
       height: 100%;
