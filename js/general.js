@@ -23,6 +23,26 @@ let calculatorForm = document.querySelector('.calculator-form'),
     rangeInputs = calculatorForm.querySelectorAll('.custom-range input'),
     numberInputs = calculatorForm.querySelectorAll('.unobvious-input');
 
+for (let i = 0; i < numberInputs.length; i++) {
+    let targetInput = calculatorForm.querySelector('[data-target="' + numberInputs[i].id + '"]'),
+        unit = '';
+
+    if (targetInput.dataset.unit) {
+        unit = " " + targetInput.dataset.unit;
+
+        if (targetInput.dataset.unit === 'лет') {
+            if (Number(numberInputs[i].value) === 1) {
+                unit = " год";
+            } else if (Number(numberInputs[i].value) > 1 && Number(numberInputs[i].value) < 5) {
+                unit = " года";
+            }
+        }
+    }
+
+    numberInputs[i].type = 'text';
+    numberInputs[i].value = Number(numberInputs[i].value).toLocaleString("ru") + unit;
+}
+
 calcResults(rangeInputs[0].value, rangeInputs[1].value);
 
 function addRangeInputEvent (input) {
@@ -68,6 +88,11 @@ function addNumberInputEvent (input) {
             start = this.selectionStart,
             numberValue = parseInt(this.value.replace( /\s/g, ''));
 
+        if (!numberValue || numberValue < 1) {
+            numberValue = 1;
+            start += 1;
+        }
+
         if (targetInput.dataset.unit) {
             unit = " " + targetInput.dataset.unit;
 
@@ -78,11 +103,6 @@ function addNumberInputEvent (input) {
                     unit = " года";
                 }
             }
-        }
-
-        if (!numberValue) {
-            numberValue = 0;
-            start += 1;
         }
 
         targetInput.value = numberValue;
@@ -150,25 +170,16 @@ function calcResults (amount, time) {
 /* Партнёры */
 let partners = document.querySelector('.partners'),
     partnersItems = partners.querySelectorAll('.partners-item'),
-    morePartnersBtn = document.getElementById('more-partners'),
-    itemHeight = partnersItems[0].offsetHeight;
+    morePartnersBtn = document.getElementById('more-partners');
 
 for (let i = 3; i < partnersItems.length; i++) {
-    partnersItems[i].classList.add('visually-hidden');
+    partnersItems[i].classList.add('hide');
 }
 
 morePartnersBtn.addEventListener('click', function () {
-    let hiddenItems = partners.querySelectorAll('.partners-item.visually-hidden'),
+    let hiddenItems = partners.querySelectorAll('.partners-item.hide'),
         numberOfHiddenItems = hiddenItems.length,
-        currentHeight = partners.clientHeight,
         numberToShowItems;
-
-    partners.style.height = currentHeight + 'px';
-
-    setTimeout(function () {
-        partners.style.height = (currentHeight + itemHeight + 24) + 'px';
-        console.log(partners.style.height);
-    });
 
     if (numberOfHiddenItems >= 3) {
         numberToShowItems = 3;
@@ -177,17 +188,20 @@ morePartnersBtn.addEventListener('click', function () {
     }
 
     for (let i = 0; i < numberToShowItems; i++) {
-        hiddenItems[i].classList.remove('visually-hidden');
+        hiddenItems[i].classList.add('show');
         numberOfHiddenItems -= 1;
     }
-
-    setTimeout(function () {
-        partners.removeAttribute('style');
-    }, 400);
 
     if (numberOfHiddenItems === 0) {
         morePartnersBtn.classList.add('d-none');
     }
+
+    setTimeout(function () {
+        for (let i = 0; i < numberToShowItems; i++) {
+            hiddenItems[i].classList.remove('hide');
+            hiddenItems[i].classList.remove('show');
+        }
+    }, 500)
 });
 
 

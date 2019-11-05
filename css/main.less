@@ -326,8 +326,6 @@
   padding: 0;
 
   list-style: none;
-  transition: height 400ms;
-  overflow: hidden;
 
   &-item {
     width: 33.3%;
@@ -336,6 +334,26 @@
 
     .card {
       height: 100%;
+    }
+
+    &.hide {
+      height: 0;
+      margin-bottom: 0;
+
+      visibility: hidden;
+      opacity: 0;
+
+      transition:
+              visibility 500ms,
+              opacity 500ms;
+    }
+
+    &.show {
+      height: auto;
+      margin-bottom: 24px;
+
+      visibility: visible;
+      opacity: 1;
     }
   }
 }
@@ -347,6 +365,13 @@
   .main-subtitle {
     margin-bottom: 24px;
   }
+}
+
+.success-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 @import "responsive/main";

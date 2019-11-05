@@ -1,15 +1,4 @@
 @import "fonts.css";
-@keyframes down-up {
-  0%,
-  50%,
-  100% {
-    transform: translateY(0);
-  }
-  25%,
-  75% {
-    transform: translateY(15px);
-  }
-}
 img {
   max-width: 100%;
   height: auto;
@@ -406,8 +395,6 @@ html {
   margin: 60px -16px 8px -16px;
   padding: 0;
   list-style: none;
-  transition: height 400ms;
-  overflow: hidden;
 }
 .partners-item {
   width: 33.3%;
@@ -417,12 +404,32 @@ html {
 .partners-item .card {
   height: 100%;
 }
+.partners-item.hide {
+  height: 0;
+  margin-bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 500ms,
+              opacity 500ms;
+}
+.partners-item.show {
+  height: auto;
+  margin-bottom: 24px;
+  visibility: visible;
+  opacity: 1;
+}
 .request-form {
   width: 821px;
   margin: 60px auto 0;
 }
 .request-form .main-subtitle {
   margin-bottom: 24px;
+}
+.success-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 @media (max-width: 1920px) {
   .calculator-form {
@@ -959,6 +966,17 @@ html {
 @media (min-width: 768px) {
   .col-sm-6 {
     width: 50%;
+  }
+}
+@keyframes down-up {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(15px);
   }
 }
 .d-none,

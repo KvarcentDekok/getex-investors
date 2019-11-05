@@ -165,8 +165,8 @@
                 <form method="post" action="server/calculator.php" class="card calculator-form">
                     <div class="form-group">
                         <label for="amount" class="main-subtitle">Сумма<noscript>, руб</noscript></label>
-                        <input type="text" class="unobvious-input" name="amount" id="amount"
-                               data-clone="investments-amount" value="1 000 000 руб.">
+                        <input type="number" class="unobvious-input" name="amount" id="amount"
+                               data-clone="investments-amount" value="1000000" min="10000" step="10000">
 
                         <div class="custom-range d-sm-none noscript-hidden">
                             <label for="amount-range"  class="visually-hidden">Сумма</label>
@@ -181,8 +181,8 @@
 
                     <div class="form-group">
                         <label for="time" class="main-subtitle">Срок<noscript>, лет</noscript></label>
-                        <input type="text" class="unobvious-input" name="time" id="time" data-clone="investments-time"
-                               value="2 года">
+                        <input type="number" class="unobvious-input" name="time" id="time" data-clone="investments-time"
+                               value="2" min="1" step="1">
 
                         <div class="custom-range d-sm-none noscript-hidden">
                             <label for="time-range" class="visually-hidden">Срок</label>
@@ -361,28 +361,31 @@
         </div>
 
         <div class="container container-sm-fluid">
-            <form class="card request-form" method="post" action="#">
+            <form class="card request-form" method="post" action="server/request.php">
                 <fieldset class="form-field">
                     <legend class="main-subtitle">Контактные данные</legend>
 
                     <div class="form-row">
                         <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
-                                <input type="text" id="user-name" name="name" placeholder="Фамилия Имя Отчество">
+                                <input type="text" id="user-name" name="name" placeholder="Фамилия Имя Отчество"
+                                    required>
                                 <label for="user-name">Как к вам обращаться?</label>
                             </div>
                         </div>
 
                         <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
-                                <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99">
+                                <input type="text" id="phone-number" name="phone" placeholder="+7 (999) 999-99-99"
+                                    required>
                                 <label for="phone-number">Номер телефона</label>
                             </div>
                         </div>
 
                         <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
-                                <input type="email" id="user-email" name="email" placeholder="example@mail.com">
+                                <input type="email" id="user-email" name="email" placeholder="example@mail.com"
+                                    required>
                                 <label for="user-email">Электронная почта</label>
                             </div>
                         </div>
@@ -396,7 +399,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="number" id="investments-amount" name="investments-amount"
-                                       placeholder="Целое число" step="10000">
+                                       placeholder="Целое число" step="10000" min="10000">
                                 <label for="investments-amount">Сумма инвестиций</label>
                             </div>
 
@@ -405,7 +408,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="custom-text-input">
                                 <input type="number" id="investments-time" name="investments-time"
-                                       placeholder="Целое число">
+                                       placeholder="Целое число" min="1">
                                 <label for="investments-time">Срок инвестирования</label>
                             </div>
                         </div>
