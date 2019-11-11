@@ -1,3 +1,5 @@
+@import "variables";
+
 @bg-navbar: rgba(42, 42, 42, 0.36);
 
 .navbar {
@@ -47,10 +49,48 @@
       transform-origin: 0 0;
       transform: translate(-13px, 14px) rotate(-45deg);
     }
+
+    &.scrolled {
+      color: #ffffff;
+
+      .color-1 {
+        fill: #ffffff;
+      }
+
+      .color-2 {
+        fill: #ffffff;
+      }
+
+      line {
+        stroke: #ffffff;
+      }
+
+      .nav-link:hover {
+        background-color: darken(@bg-navbar, 25%);
+      }
+    }
   }
 
   &.scrolled {
-    background-color: #000000;
+    color: #000000;
+
+    background-color: #ffffff;
+
+    .color-1 {
+      fill: #404040;
+    }
+
+    .color-2 {
+      fill: #049d6e;
+    }
+
+    line {
+      stroke: #000000;
+    }
+
+    .nav-link:hover {
+      background-color: fade(@main-color, 15%);
+    }
   }
 }
 

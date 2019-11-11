@@ -49,8 +49,18 @@
       top: 50%;
       z-index: -1;
 
-      filter: brightness(76%);
       transform: translateY(-50%);
+
+      &::before {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        z-index: 1;
+
+        content: '';
+        background-color: rgba(0, 0, 0, 0.26);
+      }
 
       img {
         width: auto;
@@ -132,6 +142,12 @@
   .activity {
     margin-top: 60px;
     padding-top: 0;
+    height: auto;
+
+    &-text {
+      height: auto;
+      min-height: 100%;
+    }
   }
 
   .features {

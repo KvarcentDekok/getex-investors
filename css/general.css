@@ -71,8 +71,36 @@ html {
   transform-origin: 0 0;
   transform: translate(-13px, 14px) rotate(-45deg);
 }
+.navbar.expand.scrolled {
+  color: #ffffff;
+}
+.navbar.expand.scrolled .color-1 {
+  fill: #ffffff;
+}
+.navbar.expand.scrolled .color-2 {
+  fill: #ffffff;
+}
+.navbar.expand.scrolled line {
+  stroke: #ffffff;
+}
+.navbar.expand.scrolled .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.36);
+}
 .navbar.scrolled {
-  background-color: #000000;
+  color: #000000;
+  background-color: #ffffff;
+}
+.navbar.scrolled .color-1 {
+  fill: #404040;
+}
+.navbar.scrolled .color-2 {
+  fill: #049d6e;
+}
+.navbar.scrolled line {
+  stroke: #000000;
+}
+.navbar.scrolled .nav-link:hover {
+  background-color: rgba(4, 50, 157, 0.15);
 }
 .logo {
   display: flex;
@@ -264,6 +292,7 @@ html {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  /*for IE*/
   padding: 16px 16px 16px 0;
 }
 .activity-picture {
@@ -465,8 +494,15 @@ html {
     height: 100%;
     top: 50%;
     z-index: -1;
-    filter: brightness(76%);
     transform: translateY(-50%);
+  }
+  .activity-picture::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.26);
   }
   .activity-picture img {
     width: auto;
@@ -524,6 +560,11 @@ html {
   .activity {
     margin-top: 60px;
     padding-top: 0;
+    height: auto;
+  }
+  .activity-text {
+    height: auto;
+    min-height: 100%;
   }
   .features-item {
     width: 100%;

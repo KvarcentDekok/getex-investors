@@ -1,6 +1,7 @@
 let navbar = document.querySelector('.navbar'),
     navLinks = navbar.querySelectorAll('.nav-link'),
-    toggler = navbar.querySelector('.toggler');
+    toggler = navbar.querySelector('.toggler'),
+    navHeight = navbar.clientHeight;
 
 for (let i = 0; i < navLinks.length; i++) {
     animateAnchor(navLinks[i]);
@@ -8,7 +9,7 @@ for (let i = 0; i < navLinks.length; i++) {
 
 
 window.addEventListener('scroll', function () {
-    if (window.pageYOffset >= document.documentElement.clientHeight - navbar.clientHeight) {
+    if (window.pageYOffset >= document.documentElement.clientHeight - navHeight) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
