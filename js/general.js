@@ -1,7 +1,12 @@
-let noscriptHidden = document.querySelectorAll('.noscript-hidden');
+let noscriptHidden = document.querySelectorAll('.noscript-hidden'),
+    noscriptReadonly = document.querySelectorAll('.noscript-readonly');
 
 for (let i = 0; i < noscriptHidden.length; i++) {
     noscriptHidden[i].classList.remove('noscript-hidden');
+}
+
+for (let i = 0; i < noscriptReadonly.length; i++) {
+    noscriptReadonly[i].readOnly = true;
 }
 
 /* Кнопка "Вниз" */
@@ -68,6 +73,19 @@ function addRangeInputEvent (input) {
                     unit = " год";
                 } else if (this.value > 1 && this.value < 5) {
                     unit = " года";
+                }
+            } else if (this.dataset.unit === 'месяцев') {
+                if (this.value[this.value.length - 1] === '1') {
+                    if (this.value[this.value.length - 2] !== '1') {
+                        unit = " месяц";
+                    }
+                } else if (
+                    Number(this.value[this.value.length - 1]) > 1 &&
+                    Number(this.value[this.value.length - 1]) < 5
+                ) {
+                    if (this.value[this.value.length - 2] !== '1') {
+                        unit = " месяца";
+                    }
                 }
             }
         }
@@ -143,9 +161,11 @@ joinButton.addEventListener('click', function (evt) {
     evt.preventDefault();
 
     for (let i = 0; i < numberInputs.length; i++) {
-        let cloneInput = document.getElementById(numberInputs[i].dataset.clone);
+        let cloneInputs = document.querySelectorAll('[id *= "' + numberInputs[i].dataset.clone + '"]');
 
-        cloneInput.value = parseInt(numberInputs[i].value.replace( /\s/g, ''));
+        for (let k = 0; k < cloneInputs.length; k++) {
+            cloneInputs[k].value = parseInt(numberInputs[i].value.replace( /\s/g, ''));
+        }
     }
 });
 
@@ -157,7 +177,14 @@ function calcResults (amount, time) {
     resultsOut.income = document.getElementById('result-income');
     resultsOut.profit = document.getElementById('result-profit');
 
-    results.interestRate = time * 2;
+    if (Number(amount) <= 7500000) {
+        results.interestRate = 15;
+    } else if (Number(amount) <= 15000000) {
+        results.interestRate = 16;
+    } else {
+        results.interestRate = 18
+    }
+
     results.income = Number(amount) + ((amount * results.interestRate / 100) * time);
     results.profit = results.income - amount;
 
@@ -202,6 +229,72 @@ morePartnersBtn.addEventListener('click', function () {
             hiddenItems[i].classList.remove('show');
         }
     }, 500)
+});
+
+
+/* Формы обратной связи */
+const blockChanger = document.querySelector('.block-changer'),
+    requestForms = document.querySelectorAll('.request-form');
+
+for (let i = 1; i < requestForms.length; i++) {
+    requestForms[i].classList.add('d-none');
+}
+
+blockChanger.addEventListener('click', function (evt) {
+    let target = evt.target;
+
+    while (target !== this) {
+        if (target.classList.contains('block-option'))  {
+            if (!target.classList.contains('active')) {
+                let blockOptions = blockChanger.querySelectorAll('.block-option'),
+                    targetForm = document.getElementById(target.dataset.target);
+
+                for (let i = 0; i < blockOptions.length; i++) {
+                    blockOptions[i].classList.remove('active');
+                }
+
+                target.classList.add('active');
+
+                for (let i = 0; i < requestForms.length; i++) {
+                    requestForms[i].classList.add('d-none');
+                }
+
+                targetForm.classList.remove('d-none');
+            }
+        }
+
+        target = target.parentNode;
+    }
+});
+
+
+$("#company-inn").suggestions({
+    token: "002eb8588b8af7978cfab46b1a943ccac119b706",
+    type: "PARTY",
+    count: 5,
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: function (suggestion) {
+        console.log(suggestion);
+
+        this.value = suggestion.data.inn;
+    }
+});
+
+let bankNameInput = document.getElementById('bank-name'),
+    corrAccountInput = document.getElementById('corr-account');
+
+$("#bic").suggestions({
+    token: "002eb8588b8af7978cfab46b1a943ccac119b706",
+    type: "BANK",
+    count: 5,
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: function(suggestion) {
+        console.log(suggestion);
+
+        this.value = suggestion.data.bic;
+        bankNameInput.value = suggestion.data.name.payment;
+        corrAccountInput.value = suggestion.data.correspondent_account;
+    }
 });
 
 

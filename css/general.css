@@ -169,6 +169,22 @@ html {
     background-color: rgba(0, 0, 0, 0.83);
   }
 }
+.card {
+  padding: 40px 32px;
+  background-color: #fbfbfb;
+  transition: box-shadow 200ms;
+}
+.card:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 24px 32px;
+  }
+  .card.request-form {
+    padding: 32px 24px;
+  }
+}
 .first-screen {
   display: flex;
   align-items: center;
@@ -258,11 +274,13 @@ html {
 .main-description {
   max-width: 570px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 16px;
+  padding: 0;
   font-family: "Montserrat Regular", Arial, sans-serif;
   font-size: 18px;
   line-height: 22px;
   color: #332C2C;
+  list-style: none;
 }
 .simple-text {
   margin-top: 16px;
@@ -272,11 +290,35 @@ html {
   line-height: 19px;
   color: #332C2C;
 }
+.simple-text li {
+  margin-bottom: 8px;
+}
+.media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 60px -16px 8px -16px;
+  padding: 0;
+  list-style: none;
+}
+.media-item {
+  width: 50%;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+.media-item .card {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+.media .simple-text {
+  max-width: 554px;
+  line-height: 24px;
+  color: #838E99;
+}
 .activity {
   display: flex;
   min-height: 469px;
-  height: 1px;
-  /*for IE*/
   padding: 0;
   margin-top: 120px;
   position: relative;
@@ -297,6 +339,7 @@ html {
 }
 .activity-picture {
   min-height: 469px;
+  height: 100%;
   width: 50%;
   position: absolute;
   top: 0;
@@ -314,24 +357,25 @@ html {
   min-width: 100%;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .activity-picture .container {
   height: 100%;
   /*for IE*/
 }
-.activity .text-bigger {
+.activity .simple-text {
+  max-width: 554px;
+  line-height: 24px;
+  color: #838E99;
+}
+.text-bigger {
   margin-top: 24px;
   margin-bottom: 16px;
   font-family: "Montserrat Regular", Arial, sans-serif;
   font-size: 24px;
   line-height: 29px;
   color: #332C2C;
-}
-.activity .simple-text {
-  max-width: 554px;
-  line-height: 24px;
-  color: #838E99;
 }
 .features {
   display: flex;
@@ -449,7 +493,10 @@ html {
 }
 .request-form {
   width: 821px;
-  margin: 60px auto 0;
+  margin: 0 auto 24px;
+}
+.request-form:hover {
+  box-shadow: none;
 }
 .request-form .main-subtitle {
   margin-bottom: 24px;
@@ -577,7 +624,8 @@ html {
     font-family: "Montserrat Bold", "Arial", sans-serif;
     font-size: 200px;
   }
-  .partners-item {
+  .partners-item,
+  .media-item {
     width: 100%;
   }
 }
@@ -694,20 +742,44 @@ html {
 .button-outline:active {
   color: rgba(4, 50, 157, 0.5);
 }
-.card {
-  padding: 40px 32px;
-  background-color: #fbfbfb;
-  transition: box-shadow 200ms;
+.block-changer {
+  display: flex;
+  width: 821px;
+  margin: 60px auto 0;
+  padding: 0;
+  list-style: none;
 }
-.card:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+.block-changer li {
+  width: 50%;
+}
+.block-option {
+  width: 100%;
+  height: 100%;
+  padding: 24px 32px;
+  border: none;
+  font-family: "Montserrat Bold", "Arial", sans-serif;
+  font-size: 24px;
+  color: #04329D;
+  text-transform: uppercase;
+  text-align: left;
+  background-color: #eeeeee;
+}
+.block-option.active {
+  background-color: #fbfbfb;
+}
+@media (max-width: 992px) {
+  .block-changer {
+    width: 100%;
+  }
+  .block-option {
+    font-size: 18px;
+  }
 }
 @media (max-width: 768px) {
-  .card {
-    padding: 24px 32px;
-  }
-  .card.request-form {
-    padding: 32px 24px;
+  .block-option {
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 16px;
   }
 }
 .form-group {
@@ -889,25 +961,34 @@ html {
 .custom-text-input input:not(:placeholder-shown) {
   padding: 24px 16px 10px;
 }
-.custom-text-input input:not(:placeholder-shown) + label {
+.custom-text-input input:not(:placeholder-shown) ~ label {
   top: 8px;
   font-size: 12px;
 }
 .custom-text-input input:not(:-ms-input-placeholder) {
   padding: 24px 16px 10px;
 }
-.custom-text-input input:not(:-ms-input-placeholder) + label {
+.custom-text-input input:not(:-ms-input-placeholder) ~ label {
   top: 8px;
   font-size: 12px;
 }
 .custom-text-input input:focus {
   background-color: #ffffff;
 }
+.custom-text-input input[readonly] {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.custom-text-input input:-moz-read-only {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.custom-text-input input:read-only {
+  background-color: rgba(0, 0, 0, 0.15);
+}
 @supports (-ms-ime-align:auto) {
   .custom-text-input input {
     padding: 24px 16px 10px;
   }
-  .custom-text-input input + label {
+  .custom-text-input input ~ label {
     top: 8px;
     font-size: 12px;
   }
@@ -924,6 +1005,12 @@ html {
   pointer-events: none;
   transition: all 200ms;
   overflow: hidden;
+}
+.form-title {
+  margin-top: 0;
+  font-family: "Montserrat Medium", "Arial", sans-serif;
+  font-size: 20px;
+  color: #332C2C;
 }
 @media (max-width: 768px) {
   .form-field:last-of-type {

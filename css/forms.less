@@ -232,7 +232,7 @@
     &:not(:placeholder-shown) {
       padding: 24px 16px 10px;
 
-      & + label {
+      & ~ label {
         top: 8px;
 
         font-size: 12px;
@@ -242,7 +242,7 @@
     &:not(:-ms-input-placeholder) {
       padding: 24px 16px 10px;
 
-      & + label {
+      & ~ label {
         top: 8px;
 
         font-size: 12px;
@@ -253,13 +253,25 @@
     &:focus {
       background-color: #ffffff;
     }
+
+    &[readonly] { //for IE
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    &:-moz-read-only{
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    &:read-only {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
   }
 
   @supports (-ms-ime-align:auto) {
     input {
       padding: 24px 16px 10px;
 
-      & + label {
+      & ~ label {
         top: 8px;
 
         font-size: 12px;
@@ -283,6 +295,14 @@
     transition: all 200ms;
     overflow: hidden;
   }
+}
+
+.form-title {
+  margin-top: 0;
+
+  font-family: "Montserrat Medium", "Arial", sans-serif;
+  font-size: 20px;
+  color: @text-color-main;
 }
 
 @import "responsive/forms";
